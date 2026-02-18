@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Employee Management System</h1>
+        <p>Manage employees, attendance, leaves, and payroll easily.</p>
+    </header>
+    
+    <div class="container">
+        <!-- Add Employee Section -->
+        <section class="card">
+            <h2>Add Employee</h2>
+            <form id="add-employee-form">
+                <input type="text" id="emp-name" placeholder="Full Name" required>
+                <input type="text" id="emp-id" placeholder="Employee ID" required>
+                <input type="text" id="emp-dept" placeholder="Department" required>
+                <input type="number" id="emp-salary" placeholder="Base Salary ($)" required>
+                <button type="submit" class="btn btn-primary">Add Employee</button>
+            </form>
+        </section>
+
+        <!-- Update Employee Section -->
+        <section class="card">
+            <h2>Update Employee</h2>
+            <select id="update-select" class="select">
+                <option value="">Select Employee to Update</option>
+            </select>
+            <form id="update-employee-form" style="display: none;">
+                <input type="text" id="update-name" placeholder="Full Name">
+                <input type="text" id="update-id" placeholder="Employee ID" readonly>
+                <input type="text" id="update-dept" placeholder="Department">
+                <input type="number" id="update-salary" placeholder="Base Salary ($)">
+                <button type="submit" class="btn btn-secondary">Update Employee</button>
+            </form>
+        </section>
+
+        <!-- Track Attendance Section -->
+        <section class="card">
+            <h2>Track Attendance</h2>
+            <p>Today: <strong id="current-date"></strong></p>
+            <div id="attendance-list" class="attendance-grid"></div>
+        </section>
+
+        <!-- Leave Apply Section -->
+        <section class="card">
+            <h2>Apply for Leave</h2>
+            <select id="leave-select" class="select">
+                <option value="">Select Employee</option>
+            </select>
+            <input type="date" id="leave-start" required>
+            <input type="date" id="leave-end" required>
+            <button id="apply-leave-btn" class="btn btn-warning">Apply Leave</button>
+        </section>
+
+        <!-- Payroll Calculation Section -->
+        <section class="card">
+            <h2>Basic Payroll Calculation</h2>
+            <select id="payroll-select" class="select">
+                <option value="">Select Employee</option>
+            </select>
+            <button id="calculate-payroll-btn" class="btn btn-success">Calculate Payroll</button>
+            <div id="payroll-result" class="result-box"></div>
+        </section>
+
+        <!-- Employee List -->
+        <section class="card">
+            <h2>Employee List</h2>
+            <ul id="emp-list" class="emp-list"></ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
